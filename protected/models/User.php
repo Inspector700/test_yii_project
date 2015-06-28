@@ -20,8 +20,7 @@ class User extends CActiveRecord {
      * Связи таблиц
      * @return array relational rules.
      */
-    public function relations()
-    {
+    public function relations() {
         // NOTE: you may need to adjust the relation name and the related
         // class name for the relations automatically generated below.
         return array();
@@ -37,33 +36,47 @@ class User extends CActiveRecord {
         );
     }
 
-    public function search() {
-        $criteria = new CDbCriteria;
+    public function safeAttributes() {
+        return array(
+            'username',
+            'password',
+            'email',
+            'emactivate',
+        );
+    }
 
-        $criteria->compare('id'. $this->id);
+//    public function search() {
+//        $criteria = new CDbCriteria;
+//
+//        $criteria->compare('id' . $this->id);
+//
+//        return new CActiveDataProvider($this, array(
+//            'criteria' => $criteria,
+//        ));
+//    }
 
-        return new CActiveDataProvider($this, array(
-            'criteria' => $criteria,
-        ));
+    public function hashPassword($password) {
+        return CPasswordHelper::hashPassword($password);
+    }
+
+
+    protected function beforeSave() {
+        if (parent::beforeSave()) {
+            
+                if ($this->isNewRecord)
+                    $this->password = $this->hashPassword($this->password);
+                return true;
+        }
     }
 
     public function rules() {
 
         return array(
-            array('email, username', 'unique'),
             array('username', 'required'),
             array('activate', 'boolean'),
-            array('password', 'authenticate'),
+            array('password', 'required', 'message' => "Password can not be empty"),
             array('email', 'email')
         );
     }
-
-    public function authenticate($attribute,$params)
-    {
-        $this->_identity = new UserIdentity($this->username, $this->password);
-        if (!$this->_identity->authenticate())
-            $this->addError('password', 'Неправильное имя пользователя или пароль.');
-    }
-
 }
 ?>
