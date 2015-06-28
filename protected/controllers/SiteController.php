@@ -45,7 +45,13 @@ class SiteController extends Controller
 				$this->render('error', $error);
 		}
 	}
-
+    public function actionUser($username = 'test') {
+        $model = new User;
+        echo CActiveForm::validate($model);
+        if (isset($_POST['User'])) echo '123';
+        //$model->username = $_POST['username'];
+        $this->render('user',array('model'=>$model));
+    }
 	/**
 	 * Displays the contact page
 	 */
@@ -64,7 +70,7 @@ class SiteController extends Controller
 					"MIME-Version: 1.0\r\n".
 					"Content-Type: text/plain; charset=UTF-8";
 
-				mail(Yii::app()->params['adminEmail'],$subject,$model->body,$headers);
+				mail(Yii::app()->params['ivan@pissedconsumer.com'],$subject,$model->body,$headers);
 				Yii::app()->user->setFlash('contact','Thank you for contacting us. We will respond to you as soon as possible.');
 				$this->refresh();
 			}
