@@ -13,7 +13,7 @@ $this->breadcrumbs = array(
 
 <h1>User list</h1>
 <?php $this->widget('application.extensions.hello.HelloWidget', array(
-    'username' => 'Борис'
+    'username' => 'Борис Петровичs'
 )); ?>
 <div class="form">
     <?php
