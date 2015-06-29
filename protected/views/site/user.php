@@ -12,9 +12,6 @@ $this->breadcrumbs = array(
 ?>
 
 <h1>User list</h1>
-<p>
-    If you have business inquiries or other questions, please fill out the following form to contact us. Thank you.
-</p>
 <div class="form">
     <?php
     $form = $this->beginWidget('CActiveForm', array(
@@ -45,6 +42,12 @@ $this->breadcrumbs = array(
         <?php echo $form->labelEx($model, 'password'); ?>
         <?php echo $form->passwordField($model, 'password'); ?>
         <?php echo $form->error($model, 'password'); ?>
+    </div>
+    
+    <div class="row">
+        <?php echo $form->labelEx($model, 'password2'); ?>
+        <?php echo $form->passwordField($model, 'password2'); ?>
+        <?php echo $form->error($model, 'password2'); ?>
     </div>
 
     <div class="row">

@@ -31,6 +31,7 @@ class User extends CActiveRecord {
         return array(
             'username' => 'Ваше Имя',
             'password' => 'Ваш Пароль',
+            'password2' => 'Введите Пароль Еще раз',
             'email' => 'Ваш Email',
             'activate' => 'Подписаться на рассылку'
         );
@@ -40,6 +41,7 @@ class User extends CActiveRecord {
         return array(
             'username',
             'password',
+            'password2',
             'email',
             'emactivate',
         );
@@ -72,9 +74,12 @@ class User extends CActiveRecord {
     public function rules() {
 
         return array(
-            array('username', 'required'),
+            array('username, password, password2, email', 'required'),
             array('activate', 'boolean'),
-            array('password', 'required', 'message' => "Password can not be empty"),
+            array('password', 'compare', 'compareAttribute'=>'password2'),
+            array('username, password', 'length', 'min' => 3),
+            array('username', 'length', 'max' => 10),
+            array('password, password2', 'required', 'message' => "Password can not be empty"),
             array('email', 'email')
         );
     }

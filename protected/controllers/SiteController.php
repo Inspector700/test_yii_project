@@ -46,6 +46,7 @@ class SiteController extends Controller {
         
         $model = new User;
         
+
         if (isset($_POST['User'])) {
             
             $model->attributes = $_POST['User'];
@@ -53,6 +54,7 @@ class SiteController extends Controller {
             if ($model->validate()) {
                 
                 $model->save();
+                $model = new User;
             }
         }
         $this->render('user', array('model' => $model));
