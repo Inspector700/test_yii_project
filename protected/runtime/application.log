@@ -2393,3 +2393,58 @@ Stack trace:
 REQUEST_URI=/yii_project/index.php?r=ajax/comment
 HTTP_REFERER=http://localhost/yii_project/index.php?r=site/index
 ---
+2015/06/29 09:32:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "user".' in /var/www/html/yii-1.1.16.bca042/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/html/yii-1.1.16.bca042/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#1 /var/www/html/yii-1.1.16.bca042/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /var/www/html/yii_project/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii_project/
+HTTP_REFERER=http://localhost/
+---
+2015/06/29 09:32:15 [error] [php] include(HelloWidget.php): failed to open stream: No such file or directory (/var/www/html/yii-1.1.16.bca042/framework/YiiBase.php:432)
+Stack trace:
+#0 /var/www/html/yii-1.1.16.bca042/framework/web/CWidgetFactory.php(147): spl_autoload_call()
+#1 /var/www/html/yii-1.1.16.bca042/framework/web/CBaseController.php(146): CWidgetFactory->createWidget()
+#2 /var/www/html/yii-1.1.16.bca042/framework/web/CBaseController.php(180): SiteController->createWidget()
+#3 /var/www/html/yii_project/protected/views/site/user.php(17): SiteController->widget()
+#4 /var/www/html/yii-1.1.16.bca042/framework/web/CBaseController.php(126): require()
+#5 /var/www/html/yii-1.1.16.bca042/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#6 /var/www/html/yii-1.1.16.bca042/framework/web/CController.php(869): SiteController->renderFile()
+#7 /var/www/html/yii-1.1.16.bca042/framework/web/CController.php(782): SiteController->renderPartial()
+#8 /var/www/html/yii_project/protected/controllers/SiteController.php(60): SiteController->render()
+#9 /var/www/html/yii-1.1.16.bca042/framework/web/actions/CInlineAction.php(49): SiteController->actionUser()
+#10 /var/www/html/yii-1.1.16.bca042/framework/web/CController.php(308): CInlineAction->runWithParams()
+#11 /var/www/html/yii-1.1.16.bca042/framework/web/CController.php(286): SiteController->runAction()
+#12 /var/www/html/yii-1.1.16.bca042/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#13 /var/www/html/yii-1.1.16.bca042/framework/web/CWebApplication.php(282): SiteController->run()
+#14 /var/www/html/yii-1.1.16.bca042/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#15 /var/www/html/yii-1.1.16.bca042/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#16 /var/www/html/yii_project/index.php(13): CWebApplication->run()
+REQUEST_URI=/yii_project/index.php?r=site/user
+in /var/www/html/yii_project/protected/views/site/user.php (17)
+in /var/www/html/yii_project/protected/controllers/SiteController.php (60)
+in /var/www/html/yii_project/index.php (13)
+2015/06/29 09:32:21 [error] [php] include(HelloWidget.php): failed to open stream: No such file or directory (/var/www/html/yii-1.1.16.bca042/framework/YiiBase.php:432)
+Stack trace:
+#0 /var/www/html/yii-1.1.16.bca042/framework/web/CWidgetFactory.php(147): spl_autoload_call()
+#1 /var/www/html/yii-1.1.16.bca042/framework/web/CBaseController.php(146): CWidgetFactory->createWidget()
+#2 /var/www/html/yii-1.1.16.bca042/framework/web/CBaseController.php(180): SiteController->createWidget()
+#3 /var/www/html/yii_project/protected/views/site/user.php(17): SiteController->widget()
+#4 /var/www/html/yii-1.1.16.bca042/framework/web/CBaseController.php(126): require()
+#5 /var/www/html/yii-1.1.16.bca042/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#6 /var/www/html/yii-1.1.16.bca042/framework/web/CController.php(869): SiteController->renderFile()
+#7 /var/www/html/yii-1.1.16.bca042/framework/web/CController.php(782): SiteController->renderPartial()
+#8 /var/www/html/yii_project/protected/controllers/SiteController.php(60): SiteController->render()
+#9 /var/www/html/yii-1.1.16.bca042/framework/web/actions/CInlineAction.php(49): SiteController->actionUser()
+#10 /var/www/html/yii-1.1.16.bca042/framework/web/CController.php(308): CInlineAction->runWithParams()
+#11 /var/www/html/yii-1.1.16.bca042/framework/web/CController.php(286): SiteController->runAction()
+#12 /var/www/html/yii-1.1.16.bca042/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#13 /var/www/html/yii-1.1.16.bca042/framework/web/CWebApplication.php(282): SiteController->run()
+#14 /var/www/html/yii-1.1.16.bca042/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#15 /var/www/html/yii-1.1.16.bca042/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#16 /var/www/html/yii_project/index.php(13): CWebApplication->run()
+REQUEST_URI=/yii_project/index.php?r=site/user
+in /var/www/html/yii_project/protected/views/site/user.php (17)
+in /var/www/html/yii_project/protected/controllers/SiteController.php (60)
+in /var/www/html/yii_project/index.php (13)
