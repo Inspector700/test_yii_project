@@ -12,8 +12,10 @@ class HelloWidget extends CWidget
      */
     public function run()
     {
+        $sql = 'Select * From user Order By rand() Limit 5;';
+        $users = User::model()->findAllBySql($sql);
         $this->render('index', array(
-            'username' => $this->username,
+            'users' => $users,
         ));
     }
 }

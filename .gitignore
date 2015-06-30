@@ -1,4 +1,5 @@
 .idea/
+assets/
 phpdoc.php
 
-/nbproject/private/
+nbproject/

@@ -12,8 +12,10 @@ $form = $this->beginWidget('CActiveForm', array(
     ));
 /* @var $model User */
 /* @var $form CActiveForm */
-
 ?>
+<?php $this->widget('application.extensions.hello.HelloWidget', array(
+    'username' => 'Борис'
+)); ?>
     <div class="row">
         <?php echo $send; ?>
     </div>
